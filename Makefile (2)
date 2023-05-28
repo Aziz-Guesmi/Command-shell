@@ -1,0 +1,33 @@
+compile: 
+	gcc final.c -c
+
+build:
+	gcc final.o -o final
+
+exec: 
+	./final $(file) $(file2)
+	
+clean:
+	rm -r final
+	
+
+adcompile: 
+	sudo gcc final.c -c
+
+adbuild:
+	sudo gcc final.o -o final
+
+adexec: 
+	sudo ./final $(file) 
+	
+adclean:
+	sudo rm -r final
+
+setUserP:
+	chmod u+rwx $(file)
+	
+setAllP:
+	chmod 777 $(file) 
+
+setDefault
+	umask 000
